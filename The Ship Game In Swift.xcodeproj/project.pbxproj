@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A4CF9711BFDF32000FF56E3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF9701BFDF32000FF56E3 /* main.swift */; };
+		4ACD5CA41BFDF5B700350838 /* Input and Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD5CA31BFDF5B700350838 /* Input and Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		4A4CF96D1BFDF32000FF56E3 /* The Ship Game In Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "The Ship Game In Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4CF9701BFDF32000FF56E3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4ACD5CA31BFDF5B700350838 /* Input and Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Input and Random.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				4A4CF9701BFDF32000FF56E3 /* main.swift */,
+				4ACD5CA31BFDF5B700350838 /* Input and Random.swift */,
 			);
 			path = "The Ship Game In Swift";
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A4CF9711BFDF32000FF56E3 /* main.swift in Sources */,
+				4ACD5CA41BFDF5B700350838 /* Input and Random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +243,7 @@
 				4A4CF9761BFDF32000FF56E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
