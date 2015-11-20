@@ -12,12 +12,12 @@ import Foundation
 
 class GameBoard {
     
-    let gameBoardX: Int
-    let gameBoardY: Int
+    let boardSizeX: Int
+    let boardSizeY: Int
     let shipNumber: Int
+    var boardPoint: [String: [String: Bool]]
     
-    
-    //Initialize new class
+    //Initialize new class with size and total ship number
     init() {
         //Welcom message
         print("Welcome, please select a gameboard size by enter a/b/c")
@@ -50,8 +50,20 @@ class GameBoard {
         }
         
         //Return gameboard size and ship number
-        self.gameBoardX = temp1
-        self.gameBoardY = temp1
+        self.boardSizeX = temp1
+        self.boardSizeY = temp1
         self.shipNumber = temp2
+        
+        //Setup boardPoint
+        var tempDic = [String: [String: Bool]]()
+        var pointStat = ["Occupied": false, "hitted": false]
+        for x in 1...temp1 {
+            for y in 1...temp1 {
+                tempDic["\(x)\(y)"] = pointStat
+            }
+        }
+        
+        //Return boardPoint
+        self.boardPoint = tempDic
     }
 }
