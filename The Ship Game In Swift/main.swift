@@ -8,5 +8,10 @@
 
 import Foundation
 
-print("Hello, World!")
+//The Ship Game starts here
 
+//Setup gameboard
+let newGameBoard = GameBoard()
+print("")
+print("The gameboard size is \(newGameBoard.gameBoardX)x\(newGameBoard.gameBoardY), and the total ship number is \(newGameBoard.shipNumber).")
+print("The game begings now!")
