@@ -1,9 +1,9 @@
 //
 //  userInput.swift
-//  My First Project
+//  The Ship Game In Swift
 //
-//  Created by Ry Bristow on 6/21/14.
-//  Copyright (c) 2014 Ry Bristow. All rights reserved.
+//  Created by Harry on 15/11/19.
+//  Copyright © 2015 Harry Chen. All rights reserved.
 //
 
 import Foundation
@@ -21,5 +21,5 @@ func input() -> String {
 
 func randomIntBetween(low:Int, high:Int) -> Int {
   let range = high - (low - 1)
-  return (Int(arc4random()) % range) + (low - 1)
+  return (Int(arc4random()) % range) + low
 }

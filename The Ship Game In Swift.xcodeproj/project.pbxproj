@@ -10,6 +10,7 @@
 		4A4CF9711BFDF32000FF56E3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4CF9701BFDF32000FF56E3 /* main.swift */; };
 		4ACD5CA41BFDF5B700350838 /* Input and Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD5CA31BFDF5B700350838 /* Input and Random.swift */; };
 		4AFF02D51BFEE92400B96349 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF02D41BFEE92400B96349 /* GameBoard.swift */; };
+		4AFF02D71BFF1D6B00B96349 /* Setup Ships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF02D61BFF1D6B00B96349 /* Setup Ships.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		4A4CF9701BFDF32000FF56E3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4ACD5CA31BFDF5B700350838 /* Input and Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Input and Random.swift"; sourceTree = "<group>"; };
 		4AFF02D41BFEE92400B96349 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		4AFF02D61BFF1D6B00B96349 /* Setup Ships.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Setup Ships.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				4A4CF9701BFDF32000FF56E3 /* main.swift */,
 				4AFF02D41BFEE92400B96349 /* GameBoard.swift */,
+				4AFF02D61BFF1D6B00B96349 /* Setup Ships.swift */,
 				4ACD5CA31BFDF5B700350838 /* Input and Random.swift */,
 			);
 			path = "The Ship Game In Swift";
@@ -125,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFF02D71BFF1D6B00B96349 /* Setup Ships.swift in Sources */,
 				4A4CF9711BFDF32000FF56E3 /* main.swift in Sources */,
 				4AFF02D51BFEE92400B96349 /* GameBoard.swift in Sources */,
 				4ACD5CA41BFDF5B700350838 /* Input and Random.swift in Sources */,

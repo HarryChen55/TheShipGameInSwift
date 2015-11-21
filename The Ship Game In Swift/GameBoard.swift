@@ -1,9 +1,8 @@
-//
 //  GameBoard.swift
 //  The Ship Game In Swift
 //
 //  Created by Harry on 15/11/20.
-//  Copyright © 2015年 Harry Chen. All rights reserved.
+//  Copyright © 2015 Harry Chen. All rights reserved.
 
 
 //Setup gameboard
