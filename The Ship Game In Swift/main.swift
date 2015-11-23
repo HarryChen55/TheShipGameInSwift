@@ -32,7 +32,7 @@ let Ships = Ship.init(shipNumber: Board.shipNumber, boardSizeSmall: Board.boardS
 Board.boardPoint = Ships.boardPointOut
 
 
-//Debug: show finished gameboard
+/*Debug: show finished gameboard
 print("")
 print("Total points: \(Board.boardPoint.count). Points for play: \(Board.boardSizeSmall * Board.boardSizeSmall).")
 print("")
@@ -48,6 +48,6 @@ for i in 0...(Board.shipNumber - 1) {
     print(Ships.shipID[i])
     print("")
 }
-//Debug*/
+Debug*/
 
 
