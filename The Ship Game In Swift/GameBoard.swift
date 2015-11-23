@@ -11,8 +11,8 @@ import Foundation
 
 class GameBoard {
     
-    let boardSizeX: Int
-    let boardSizeY: Int
+    let boardSizeSmall: Int
+    let boardSizeBig: Int
     let shipNumber: Int
     var boardPoint: [String: [String: Bool]]
     
@@ -35,30 +35,37 @@ class GameBoard {
         //Select a correct size according to userinput
         var temp1 = Int(), temp2 = Int()
         switch userInput {
+        //5x5
         case "a" :
-            temp1 = 5
-            temp2 = 3
-        case "b" :
-            temp1 = 7
-            temp2 = 5
-        case "c" :
             temp1 = 9
+            temp2 = 3
+        //7x7
+        case "b" :
+            temp1 = 11
+            temp2 = 5
+        //9x9
+        case "c" :
+            temp1 = 13
             temp2 = 6
         default :
             break
         }
         
         //Return gameboard size and ship number
-        self.boardSizeX = temp1
-        self.boardSizeY = temp1
+        self.boardSizeSmall = temp1 - 4
+        self.boardSizeBig = temp1
         self.shipNumber = temp2
         
         //Setup boardPoint
         var tempDic = [String: [String: Bool]]()
-        var pointStat = ["Occupied": false, "hitted": false]
         for x in 1...temp1 {
             for y in 1...temp1 {
-                tempDic["\(x)\(y)"] = pointStat
+                tempDic["\(x)\(y)"] = ["Occupied": true, "hitted": false]
+            }
+        }
+        for x in 3...(temp1 - 2) {
+            for y in 3...(temp1 - 2) {
+                tempDic["\(x)\(y)"] = ["Occupied": false, "hitted": false]
             }
         }
         

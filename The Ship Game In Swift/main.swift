@@ -10,21 +10,46 @@ import Foundation
 //The Ship Game starts here
 
 //Setup gameboard
-let board = GameBoard()
+let Board = GameBoard()
 print("")
-print("The gameboard size is \(board.boardSizeX)x\(board.boardSizeY), and the total ship number is \(board.shipNumber).")
+print("The gameboard size is \(Board.boardSizeSmall)x\(Board.boardSizeSmall), and the total ship number is \(Board.shipNumber).")
 print("The game begings now!")
 
-/*Debug begin
-print("Total points are: \(board.boardPoint.count)")
-print("")
-for x in 1...board.boardSizeX {
-    for y in 1...board.boardSizeY {
+
+/*Degug: show initial gameboard
+for x in 1...Board.boardSizeBig {
+    for y in 1...Board.boardSizeBig{
         print("(\(x),\(y)) Status")
-        print(board.boardPoint["\(x)\(y)"]!)
+        print(Board.boardPoint["\(x)\(y)"]!)
         print("")
     }
 }
-Debug end*/
+Debug*/
 
-setupShips(boardSize: board.boardSizeX, shipNumber: board.shipNumber, board: &board.boardPoint)
+
+//Setup ship locations
+let Ships = Ship.init(shipNumber: Board.shipNumber, boardSizeSmall: Board.boardSizeSmall, boardPoint: Board.boardPoint)
+
+//Make correction to gameboard
+Board.boardPoint = Ships.boardPointOut
+
+
+/*Debug: show finished gameboard
+print("")
+print("Total points: \(Board.boardPoint.count). Points for play: \(Board.boardSizeSmall * Board.boardSizeSmall).")
+print("")
+for x in 1...Board.boardSizeBig {
+    for y in 1...Board.boardSizeBig {
+        print("(\(x),\(y)) Status")
+        print(Board.boardPoint["\(x)\(y)"]!)
+        print("")
+    }
+}
+for i in 0...(Board.shipNumber - 1) {
+    print("Ship \(i + 1):")
+    print(Ships.shipID[i])
+    print("")
+}
+Debug*/
+
+
