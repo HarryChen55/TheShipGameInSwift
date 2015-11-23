@@ -1,2 +1,2 @@
 # TheShipGameInSwift
-The Ship Game written in Swift
+A small simple command-line Game written in Swift
