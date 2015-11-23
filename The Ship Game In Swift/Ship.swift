@@ -5,8 +5,6 @@
 //  Copyright © 2015 Harry Chen. All rights reserved.
 //
 
-import Foundation
-
 class Ship {
     
     var boardPointOut: [String: [String: Bool]]  //use to output board status after ships are placed
@@ -37,32 +35,32 @@ class Ship {
             repeat {
                 tempX = randomIntBetween(3, high: (boardSizeSmall + 2))
                 tempY = randomIntBetween(3, high: (boardSizeSmall + 2))
-            } while boardPoint["\(tempX)\(tempY)"]!["Occupied"]! == true
+            } while boardPoint["(\(tempX), \(tempY))"]!["Occupied"]! == true
             
             //Chose ship direction
             repeat {
                 direction = randomIntBetween(1, high: 4)
                 switch direction {
                 case 1 :   //Check if left side is available
-                    if boardPoint["\(tempX - 2)\(tempY)"]!["Occupied"]! == true || boardPoint["\(tempX - 1)\(tempY)"]!["Occupied"]! == true {
+                    if boardPoint["(\(tempX - 2), \(tempY))"]!["Occupied"]! == true || boardPoint["(\(tempX - 1), \(tempY))"]!["Occupied"]! == true {
                         availability = false
                     } else {
                         availability = true
                     }
                 case 2 :   //Check if upper side is available
-                    if boardPoint["\(tempX)\(tempY + 2)"]!["Occupied"]! == true || boardPoint["\(tempX)\(tempY + 1)"]!["Occupied"]! == true {
+                    if boardPoint["(\(tempX), \(tempY + 2))"]!["Occupied"]! == true || boardPoint["(\(tempX), \(tempY + 1))"]!["Occupied"]! == true {
                         availability = false
                     } else {
                         availability = true
                     }
                 case 3 :   //Check if right side is available
-                    if boardPoint["\(tempX + 2)\(tempY)"]!["Occupied"]! == true || boardPoint["\(tempX + 1)\(tempY)"]!["Occupied"]! == true {
+                    if boardPoint["(\(tempX + 2), \(tempY))"]!["Occupied"]! == true || boardPoint["(\(tempX + 1), \(tempY))"]!["Occupied"]! == true {
                         availability = false
                     } else {
                         availability = true
                     }
                 case 4 :    //Check if lower side is available
-                    if boardPoint["\(tempX)\(tempY - 2)"]!["Occupied"]! == true || boardPoint["\(tempX)\(tempY - 1)"]!["Occupied"]! == true {
+                    if boardPoint["(\(tempX), \(tempY - 2))"]!["Occupied"]! == true || boardPoint["(\(tempX), \(tempY - 1))"]!["Occupied"]! == true {
                         availability = false
                     } else {
                         availability = true
@@ -76,44 +74,44 @@ class Ship {
             switch direction {
             case 1 :   //left
                 //first point
-                boardPoint["\(tempX)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY))"] = "notHit"
                 //second point
-                boardPoint["\(tempX - 1)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX - 1)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX - 1), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX - 1), \(tempY))"] = "notHit"
                 //third point
-                boardPoint["\(tempX - 2)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX - 2)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX - 2), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX - 2), \(tempY))"] = "notHit"
             case 2 :   //upper
                 //first point
-                boardPoint["\(tempX)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY))"] = "notHit"
                 //second point
-                boardPoint["\(tempX)\(tempY + 1)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY + 1)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY + 1))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY + 1))"] = "notHit"
                 //third point
-                boardPoint["\(tempX)\(tempY + 2)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY + 2)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY + 2))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY + 2))"] = "notHit"
             case 3 :   //right
                 //first point
-                boardPoint["\(tempX)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY))"] = "notHit"
                 //second point
-                boardPoint["\(tempX + 1)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX + 1)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX + 1), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX + 1), \(tempY))"] = "notHit"
                 //third point
-                boardPoint["\(tempX + 2)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX + 2)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX + 2), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX + 2), \(tempY))"] = "notHit"
             case 4 :   //lower
                 //first point
-                boardPoint["\(tempX)\(tempY)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY))"] = "notHit"
                 //second point
-                boardPoint["\(tempX)\(tempY - 1)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY - 1)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY - 1))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY - 1))"] = "notHit"
                 //third point
-                boardPoint["\(tempX)\(tempY - 2)"] = ["Occupied": true, "hitted": false]
-                shipID[i]["\(tempX)\(tempY - 2)"] = "notHit"
+                boardPoint["(\(tempX), \(tempY - 2))"] = ["Occupied": true, "hitted": false]
+                shipID[i]["(\(tempX), \(tempY - 2))"] = "notHit"
             default :
                 print("Ship Placing Error")
             }

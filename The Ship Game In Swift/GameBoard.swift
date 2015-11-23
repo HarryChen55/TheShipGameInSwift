@@ -7,8 +7,6 @@
 
 //Setup gameboard
 
-import Foundation
-
 class GameBoard {
     
     let boardSizeSmall: Int
@@ -60,12 +58,12 @@ class GameBoard {
         var tempDic = [String: [String: Bool]]()
         for x in 1...temp1 {
             for y in 1...temp1 {
-                tempDic["\(x)\(y)"] = ["Occupied": true, "hitted": false]
+                tempDic["(\(x), \(y))"] = ["Occupied": true, "hitted": false]
             }
         }
         for x in 3...(temp1 - 2) {
             for y in 3...(temp1 - 2) {
-                tempDic["\(x)\(y)"] = ["Occupied": false, "hitted": false]
+                tempDic["(\(x), \(y))"] = ["Occupied": false, "hitted": false]
             }
         }
         

@@ -5,8 +5,6 @@
 //  Copyright © 2015 Harry Chen. All rights reserved.
 //
 
-import Foundation
-
 //The Ship Game starts here
 
 //Setup gameboard
@@ -20,7 +18,7 @@ print("The game begings now!")
 for x in 1...Board.boardSizeBig {
     for y in 1...Board.boardSizeBig{
         print("(\(x),\(y)) Status")
-        print(Board.boardPoint["\(x)\(y)"]!)
+        print(Board.boardPoint["(\(x), \(y))"]!)
         print("")
     }
 }
@@ -34,14 +32,14 @@ let Ships = Ship.init(shipNumber: Board.shipNumber, boardSizeSmall: Board.boardS
 Board.boardPoint = Ships.boardPointOut
 
 
-/*Debug: show finished gameboard
+//Debug: show finished gameboard
 print("")
 print("Total points: \(Board.boardPoint.count). Points for play: \(Board.boardSizeSmall * Board.boardSizeSmall).")
 print("")
 for x in 1...Board.boardSizeBig {
     for y in 1...Board.boardSizeBig {
         print("(\(x),\(y)) Status")
-        print(Board.boardPoint["\(x)\(y)"]!)
+        print(Board.boardPoint["(\(x), \(y))"]!)
         print("")
     }
 }
@@ -50,6 +48,6 @@ for i in 0...(Board.shipNumber - 1) {
     print(Ships.shipID[i])
     print("")
 }
-Debug*/
+//Debug*/
 
 
