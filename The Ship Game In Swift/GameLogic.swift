@@ -104,7 +104,7 @@ class GameLogic {
         
         forLoop: for var i = 0; i < shipNumber; ++i {
             //Missed
-            ifLoop: if ((shipID[i]["(\(userInputX + 2), \(userInputY + 2))"]?.isEmpty) == nil) {
+            ifLoop: if shipID[i]["(\(userInputX + 2), \(userInputY + 2))"] == nil {
                 break ifLoop
                 
             //Hitted
