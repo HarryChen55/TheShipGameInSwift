@@ -1,8 +1,10 @@
+//
 //  GameBoard.swift
 //  The Ship Game In Swift
 //
 //  Created by Harry on 15/11/20.
 //  Copyright © 2015 Harry Chen. All rights reserved.
+//
 
 
 //Setup gameboard
@@ -10,7 +12,6 @@
 class GameBoard {
     
     let boardSizeSmall: Int
-    let boardSizeBig: Int
     let shipNumber: Int
     var boardPoint: [String: [String: Bool]]
     
@@ -22,12 +23,12 @@ class GameBoard {
         
         //acquire userinput
         var userInput = String()
-        userInput = input()
+        userInput = keyboardInput()
         while userInput != "a" && userInput != "b" && userInput != "c" {
             print("")
             print("Invaild input, please enter a/b/c only")
             print("a:5x5(3 Ships)  b:7x7(5 Ships)  c:9x9(6 Ships)")
-            userInput = input()
+            userInput = keyboardInput()
         }
         
         //Select a correct size according to userinput
@@ -51,7 +52,6 @@ class GameBoard {
         
         //Return gameboard size and ship number
         self.boardSizeSmall = temp1 - 4
-        self.boardSizeBig = temp1
         self.shipNumber = temp2
         
         //Setup boardPoint
@@ -69,5 +69,9 @@ class GameBoard {
         
         //Return boardPoint
         self.boardPoint = tempDic
+        
+        print("")
+        print("The gameboard size is \(boardSizeSmall)x\(boardSizeSmall), and the total ship number is \(shipNumber).")
+        print("The game begings now!")
     }
 }
