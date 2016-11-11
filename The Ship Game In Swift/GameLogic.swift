@@ -8,7 +8,7 @@
 
 class GameLogic {
     var totalFire: Int, wasted: Int, remainingShips: Int
-    private let boardSizeSmall: Int
+    fileprivate let boardSizeSmall: Int
     
     //Initialize class
     init (boardSizeSmall: Int, shipNumber: Int) {
@@ -41,7 +41,7 @@ class GameLogic {
                     break firstloop
                 } else {
                     let x = Int(String(userInput[userInput.startIndex]))
-                    let y = Int(String(userInput[userInput.endIndex.predecessor()]))
+                    let y = Int(String(userInput[userInput.characters.index(before: userInput.endIndex)]))
                     //check if input is using right characters
                     secondloop: if x == nil || y == nil {
                         accepted = false
@@ -64,12 +64,12 @@ class GameLogic {
         } while accepted == false
         
         //return vaild input
-        return (Int(String(userInput[userInput.startIndex]))!, Int(String(userInput[userInput.endIndex.predecessor()]))!)
+        return (Int(String(userInput[userInput.startIndex]))!, Int(String(userInput[userInput.characters.index(before: userInput.endIndex)]))!)
     }
     
     
     //Check if selected point has already been hitted
-    func pointHitted (userInputX: Int, userInputY: Int, inout boardPoint: [String: [String: Bool]]) -> Bool {
+    func pointHitted (_ userInputX: Int, userInputY: Int, boardPoint: inout [String: [String: Bool]]) -> Bool {
         
         var continueFunc = false
         
@@ -98,11 +98,11 @@ class GameLogic {
     
     
     //Check if shot is on target
-    func shipHitted (userInputX: Int, userInputY: Int, shipNumber: Int, inout shipID: Array<Dictionary<String, String>>) {
+    func shipHitted (_ userInputX: Int, userInputY: Int, shipNumber: Int, shipID: inout Array<Dictionary<String, String>>) {
         
         var endFunc = false
         
-        forLoop: for var i = 0; i < shipNumber; ++i {
+        forLoop: for i in 0 ..< shipNumber += 1 {
             //Missed
             ifLoop: if shipID[i]["(\(userInputX + 2), \(userInputY + 2))"] == nil {
                 break ifLoop

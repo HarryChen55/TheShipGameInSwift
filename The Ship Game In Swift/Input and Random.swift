@@ -9,17 +9,17 @@
 import Foundation
 
 func keyboardInput() -> String {
-  let keyboard = NSFileHandle.fileHandleWithStandardInput()
+  let keyboard = FileHandle.withStandardInput
   let inputData = keyboard.availableData
-  let rawString = NSString(data: inputData, encoding: NSUTF8StringEncoding)
+  let rawString = NSString(data: inputData, encoding: String.Encoding.utf8)
   if let string = rawString {
-    return string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    return string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
   } else {
     return "Invalid input"
   }
 }
 
-func randomIntBetween(low:Int, high:Int) -> Int {
+func randomIntBetween(_ low:Int, high:Int) -> Int {
   let range = high - (low - 1)
   return (Int(arc4random()) % range) + low
 }

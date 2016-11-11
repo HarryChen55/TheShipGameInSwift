@@ -11,12 +11,12 @@ class Ship {
     var boardPointOut: [String: [String: Bool]]  //use to output board status after ships are placed
     var shipID: Array<Dictionary<String, String>>  //use to store ship locations and status
     
-    private let shipNumber: Int
-    private let boardSizeSmall: Int
+    fileprivate let shipNumber: Int
+    fileprivate let boardSizeSmall: Int
     
     // Initialize class
     init (shipNumber: Int, boardSizeSmall: Int, boardPoint: [String: [String: Bool]]) {
-        let tempID = [Dictionary<String, String>](count: shipNumber, repeatedValue: ["hitCount": "0"])
+        let tempID = [Dictionary<String, String>](repeating: ["hitCount": "0"], count: shipNumber)
         
         self.shipNumber = shipNumber
         self.boardSizeSmall = boardSizeSmall
@@ -26,7 +26,7 @@ class Ship {
         setupShip(shipNumber, boardSizeSmall: boardSizeSmall, shipID: &shipID, boardPoint: &boardPointOut)
     }
     
-    private func setupShip (shipNumber: Int, boardSizeSmall: Int, inout shipID: Array<Dictionary<String, String>>, inout boardPoint: [String: [String: Bool]]) {
+    fileprivate func setupShip (_ shipNumber: Int, boardSizeSmall: Int, shipID: inout Array<Dictionary<String, String>>, boardPoint: inout [String: [String: Bool]]) {
         
         var tempX: Int, tempY: Int, availability = false, direction: Int, i = 0
         
@@ -116,7 +116,7 @@ class Ship {
             default :
                 print("Ship Placing Error")
             }
-            ++i
+            i += 1
         }
     }
 }
