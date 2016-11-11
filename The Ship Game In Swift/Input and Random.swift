@@ -9,9 +9,9 @@
 import Foundation
 
 func keyboardInput() -> String {
-  let keyboard = FileHandle.withStandardInput
+  let keyboard = FileHandle.standardInput
   let inputData = keyboard.availableData
-  let rawString = NSString(data: inputData, encoding: String.Encoding.utf8)
+  let rawString = NSString(data: inputData, encoding: String.Encoding.utf8.rawValue)
   if let string = rawString {
     return string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
   } else {
